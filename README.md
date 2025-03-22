@@ -13,7 +13,7 @@ A versatile and scalable email service API designed to abstract multiple email s
 
 1. **Clone the Repository:**
 
-    `git clone https://github.com/Rutasuvagiya/EmailService.git`
+    git clone https://github.com/Rutasuvagiya/EmailService.git
 
 2. Navigate to the Project Directory:
 
