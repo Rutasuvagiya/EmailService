@@ -58,22 +58,22 @@ HTTP/1.1 200 OK
 
     curl -X POST -F "json_file=@C:\xampp\htdocs\emailService\src\emailQueue.json" http://localhost/emailService/sendEmail.php
 
-# json file format
+### json file format
     [{
-    "to": "tracikinney@kozgene.com",
-    "data": {
+     "to": "tracikinney@kozgene.com",
+     "data": {
       "name": "Corine",
       "reset_link": "<a>Reset Password</a>"
+     },
+     "template_name": "subscription_email"
     },
-    "template_name": "subscription_email"
-  },
-  {
-    "to": "corinekinney@joviold.com",
-    "data": {
+    {
+     "to": "corinekinney@joviold.com",
+     "data": {
       "name": "Hollie"
-    },
-    "template_name": "welcome_email"
-  }]
+     },
+     "template_name": "welcome_email"
+    }]
 
 ### Response
 HTTP/1.1 200 OK
