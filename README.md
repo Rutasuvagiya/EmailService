@@ -4,16 +4,14 @@ A versatile and scalable email service API designed to abstract multiple email s
 
 ## Features
 
-- **Multiple Provider Support:** :
-- **Dynamic HTML Templates:** :
-- **High Concurrency Handling:** :
+- **Multiple Provider Support** 
+- **Dynamic HTML Templates** 
+- **High Concurrency Handling** 
 
 
 ## Installation
 
 1. **Clone the Repository:**
-
-   ```bash
 git clone https://github.com/Rutasuvagiya/EmailService.git
 
 2. Navigate to the Project Directory:
@@ -57,7 +55,7 @@ HTTP/1.1 200 OK
 
     curl -X POST -F "json_file=@C:\xampp\htdocs\emailService\src\emailQueue.json" http://localhost/emailService/sendEmail.php
 
-#json file format
+#j son file format
     [
   {
     "to": "tracikinney@kozgene.com",
