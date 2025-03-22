@@ -19,19 +19,23 @@ Below tools and packages are required to successfully install this project.
 
 ## Installation
 
-1. **Clone the Repository:**
-    git clone https://github.com/Rutasuvagiya/EmailService.git
+1. Clone the Repository:
+```bash
+git clone https://github.com/Rutasuvagiya/EmailService.git
+```
 
 2. Navigate to the Project Directory:
-
-    cd EmailService
+```bash
+cd EmailService
+```
 
 3. Install Dependencies Using Composer:
-
-    composer install
+```bash
+composer install
+```
 
 4. Implementing asynchronous email sending in PHP on Windows using Redis involves setting up a queuing system where emails are queued for sending, and a background worker processes these queues to send the emails. Here's a step-by-step guide to achieve this:
-
+```bash
     Install Redis on Windows
 
     Although Redis is primarily designed for Unix-based systems, you can run it on Windows using the following methods:
@@ -41,7 +45,7 @@ Below tools and packages are required to successfully install this project.
     Using Docker: Run a Redis container using Docker Desktop for Windows.
 
     For detailed instructions, refer to the official Redis installation guide for Windows.
-
+```
 
 
 ## Usage
@@ -70,6 +74,7 @@ HTTP/1.1 200 OK
     curl -X POST -F "json_file=@C:\tmp\emailQueue.json" http://localhost/emailService/sendEmail.php
 
 ### Json file format
+```bash
     [{
      "to": "tracikinney@kozgene.com",
      "data": {
@@ -85,11 +90,14 @@ HTTP/1.1 200 OK
      },
      "template_name": "welcome_email"
     }]
+```
 
 ### Response
+```bash
 HTTP/1.1 200 OK
       {
         "status": "success",
         "message": "Email(s) queued successfully."
       }
+```
 
