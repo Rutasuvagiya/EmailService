@@ -20,7 +20,6 @@ Below tools and packages are required to successfully install this project.
 ## Installation
 
 1. **Clone the Repository:**
-
     git clone https://github.com/Rutasuvagiya/EmailService.git
 
 2. Navigate to the Project Directory:
@@ -47,15 +46,15 @@ Below tools and packages are required to successfully install this project.
 
 ## Usage
 
-### API with json data
+## API with json data
 
-#### Request
+### Request
 
 `POST sendEmail`
 
     curl -X POST -H "Content-Type: application/json" -d "{\"template_name\":\"welcome_email\",\"to\": \"test@nca.com\",\"data\":{\"name\":\"Test User\"}}" http://localhost/emailService/sendEmail.php
 
-#### Response
+### Response
 HTTP/1.1 200 OK
       {
         "status": "success",
@@ -64,13 +63,13 @@ HTTP/1.1 200 OK
 
 ## API with json data in file
 
-#### Request
+### Request
 
 `POST sendEmail`
 
-    curl -X POST -F "json_file=@C:\xampp\htdocs\emailService\src\emailQueue.json" http://localhost/emailService/sendEmail.php
+    curl -X POST -F "json_file=@C:\tmp\emailQueue.json" http://localhost/emailService/sendEmail.php
 
-#### Json file format
+### Json file format
     [{
      "to": "tracikinney@kozgene.com",
      "data": {
@@ -87,7 +86,7 @@ HTTP/1.1 200 OK
      "template_name": "welcome_email"
     }]
 
-#### Response
+### Response
 HTTP/1.1 200 OK
       {
         "status": "success",
