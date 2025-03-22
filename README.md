@@ -8,6 +8,14 @@ A versatile and scalable email service API designed to abstract multiple email s
 - **Dynamic HTML Templates** 
 - **High Concurrency Handling** 
 
+## Requirements (Prerequisites)
+
+Below tools and packages are required to successfully install this project.
+
+- PHP version >=7.0.12
+- Composer - PHP dependency manager [Install](https://getcomposer.org/doc/00-intro.md)
+- Phpunit version ^9.0 [Install](https://phpunit.de/getting-started/phpunit-9.html)
+- PHP Documentor - Generate phpcdocs for the project [Install](https://www.phpdoc.org/)
 
 ## Installation
 
@@ -17,7 +25,7 @@ A versatile and scalable email service API designed to abstract multiple email s
 
 2. Navigate to the Project Directory:
 
-    `cd EmailService`
+    cd EmailService
 
 3. Install Dependencies Using Composer:
 
