@@ -46,11 +46,38 @@ Usage
     curl -X POST -H "Content-Type: application/json" -d "{\"template_name\":\"welcome_email\",\"to\": \"test@nca.com\",\"data\":{\"name\":\"Test User\"}}" http://localhost/emailService/sendEmail.php
 
 ### Response
-
+HTTP/1.1 200 OK
+      {
+        "status": "success",
+        "message": "Email(s) queued successfully."
+      }
 
 ## API with json data in file
   
 
     curl -X POST -F "json_file=@C:\xampp\htdocs\emailService\src\emailQueue.json" http://localhost/emailService/sendEmail.php
 
+#json file format
+    [
+  {
+    "to": "tracikinney@kozgene.com",
+    "data": {
+      "name": "Corine",
+      "reset_link": "<a>Reset Password</a>"
+    },
+    "template_name": "subscription_email"
+  },
+  {
+    "to": "corinekinney@joviold.com",
+    "data": {
+      "name": "Hollie"
+    },
+    "template_name": "welcome_email"
+  }]
+### Response
+HTTP/1.1 200 OK
+      {
+        "status": "success",
+        "message": "Email(s) queued successfully."
+      }
 
