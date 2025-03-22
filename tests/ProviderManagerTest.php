@@ -1,6 +1,5 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use App\EmailProviderInterface;
 use App\ProviderManager;
 use App\Strategy\RoundRobinStrategy;
 use App\Strategy\PerformanceBasedStrategy;

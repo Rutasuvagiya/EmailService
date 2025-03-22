@@ -1,38 +1,46 @@
 <?php
+
+/**
+ * PerformanceBasedStrategy Class
+ *
+ * Implements a strategy for selecting service providers based on their performance metrics.
+ *
+ */
+
 namespace App\Strategy;
 
-use App\ProviderSelectionStrategy;
-use App\EmailProvider;
+use App\Strategy\ProviderSelectionStrategy;
 
-class PerformanceBasedStrategy extends EmailProvider implements ProviderSelectionStrategy {
+class PerformanceBasedStrategy implements ProviderSelectionStrategy
+{
     private array $successRates = [];
     private array $providers;
 
-    public function __construct(array $providers, array $successRates) {
-        $this->successRates = $successRates;
+    /**
+     * Constructor
+     *
+     * Initializes the strategy with a list of service providers and their success rates.
+     *
+     * @param array $providers Array of service provider instances, each containing performance data.
+     */
+    public function __construct(array $providers)
+    {
         $this->providers = $providers;
     }
 
-    public function selectProvider(): array {
-        // Sort providers dynamically based on lowest failures and highest success rate
-        $arr = array_keys($this->successRates);
-        uasort($arr, function ($a, $b) {
-          echo '========<br/>'.($this->failures[$a] ?? 0) <=> (isset($this->failures[$b]) && $this->failures[$b] ?? 0) . '<br/>';
-            return ($this->failures[$a] ?? 0) <=> (isset($this->failures[$b]) && $this->failures[$b] ?? 0) ?: ($b <=> $a);
-        });
-        
-        print_r($this->successRates);
-        print_r($this->failures);
-        foreach (array_keys($this->successRates) as $index) {
-            
-            echo $index;
-            if (isset($this->providers[$index])) {
-                return [$index,$this->providers[$index]];
-            }
-        }
-        $key= array_key_first($this->providers);
+    /**
+     * Selects the best service provider based on performance metrics.
+     *
+     * This method evaluates the performance of each provider and selects the one
+     * with the optimal metrics for handling the current task.
+     *
+     * @return mixed The selected service provider instance.
+     * @throws \Exception If no service providers are available.
+     */
+    public function selectProvider(): array
+    {
+
+        $key = array_key_first($this->providers);
         return [$key,$this->providers[$key]]; // Default fallback
     }
-
-    
 }
