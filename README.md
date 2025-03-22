@@ -21,7 +21,7 @@ A versatile and scalable email service API designed to abstract multiple email s
 
 3. Install Dependencies Using Composer:
 
-    `composer install`
+    composer install
 
 4. Implementing asynchronous email sending in PHP on Windows using Redis involves setting up a queuing system where emails are queued for sending, and a background worker processes these queues to send the emails. Here's a step-by-step guide to achieve this:
 
